@@ -28,3 +28,7 @@ def rag(r):
 
 colours = ratio.dropna().apply(rag)
 print(colours.value_counts())
+
+last90 = df.tail(90)
+change = (last90["close"].iloc[-1] / last90["close"].iloc[0] - 1) * 100
+print("90-day change:", round(change, 1), "%")
